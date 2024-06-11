@@ -35,4 +35,21 @@ public class MoxField
             CollectorNumber = cardCastle.CollectorNumber
         };
     }
+
+    public static MoxField build(LigaMagic ligaMagic)
+    {
+        return new MoxField
+        {
+            Count = ligaMagic.Count,
+            TradelistCount = ligaMagic.Count,
+            Name = ligaMagic.CardName,
+            Edition = ligaMagic.SetName,
+            Condition = ligaMagic.Condition,
+            Language = "en",
+            Foil = ligaMagic.ExtraInfo.Contains("Foil"),
+            Tags = new List<string>(),
+            LastModified = DateTime.Now,
+            CollectorNumber = ligaMagic.CollectorNumber
+        };
+    }
 }
